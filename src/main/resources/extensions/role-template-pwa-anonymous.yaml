@@ -1,0 +1,15 @@
+apiVersion: v1alpha1
+kind: Role
+metadata:
+  name:  role-template-anonymous-pwa
+  labels:
+    halo.run/hidden: "true"
+    halo.run/role-template: "true"
+    rbac.authorization.halo.run/aggregate-to-anonymous: "true"
+  annotations:
+    rbac.authorization.halo.run/module: "PWA"
+    rbac.authorization.halo.run/display-name: "匿名接口"
+rules:
+  - apiGroups: [ "api.pwa.kunkunyu.com" ]
+    resources: [ "basic-config" ]
+    verbs: [ "get", "list" ]

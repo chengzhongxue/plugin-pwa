@@ -1,22 +1,21 @@
-# Refer https://docs.halo.run/developer-guide/plugin/basics/manifest
-
 apiVersion: plugin.halo.run/v1alpha1
 kind: Plugin
 metadata:
-  # The name defines how the plugin is invoked, A unique name
-  name: starter
+  name: pwa
 spec:
-  enabled: true
+  enabled: false
   requires: ">=2.20.0"
   author:
-    name: Halo
-    website: https://github.com/halo-dev
-  logo: logo.png
-  homepage: https://github.com/halo-dev/plugin-starter#readme
-  repo: https://github.com/halo-dev/plugin-starter
-  issues: https://github.com/halo-dev/plugin-starter/issues
-  displayName: "插件快速开始模板"
-  description: "这是一个插件快速开始模板"
+    name: 困困鱼
+    website: https://github.com/chengzhongxue
+  logo: logo.svg
+  homepage: https://github.com/chengzhongxue/plugin-pwa#readme
+  repo: https://github.com/chengzhongxue/plugin-pwa
+  issues: https://github.com/chengzhongxue/plugin-pwa/issues
+  configMapName: plugin-pwa-configMap
+  settingName: plugin-pwa-settings
+  displayName: "PWA"
+  description: "PWA 可以帮助您立即将 Halo 网站转换为渐进式 Web 应用程序。"
   license:
     - name: "GPL-3.0"
-      url: "https://github.com/halo-dev/plugin-starter/blob/main/LICENSE"
+      url: "https://github.com/chengzhongxue/plugin-pwa/blob/main/LICENSE"

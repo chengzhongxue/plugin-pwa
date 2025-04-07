@@ -1,0 +1,83 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: plugin-pwa-settings
+spec:
+  forms:
+    - group: basic
+      label: 基本设置
+      formSchema:
+        - $formkit: text
+          label: 应用的全名
+          name: name
+          validation: required
+          value: 'My PWA'
+          help: '显示在应用安装提示和设置中'
+        - $formkit: text
+          label: 应用的短名称
+          name: short_name
+          validation: required
+          value: 'PWA'
+          help: '显示在主屏幕和启动画面中'
+        - $formkit: text
+          label: 表示整个网站都是 PWA 应用的一部分
+          name: scope
+          validation: required
+          value: '/'
+        - $formkit: text
+          label: 启动时打开的URL
+          name: start_url
+          validation: required
+          value: '/'
+          help: '应用启动时打开的URL，通常设置为首页'
+        - $formkit: select
+          label: 应用的显示模式
+          name: display
+          validation: required
+          value: 'standalone'
+          options:
+            - label: "全屏显示，隐藏所有浏览器UI"
+              value: "fullscreen"
+            - label: "独立应用模式，看起来像原生应用"
+              value: "standalone"
+            - label: "最小化UI模式，保留少量浏览器UI"
+              value: "minimal-ui"
+            - label: "普通浏览器模式"
+              value: "browser"
+        - $formkit: color
+          name: background_color
+          label: 背景颜色
+          value: "#ffffff"
+          validation: required
+          help: '应用启动时的背景颜色，用于启动画面'
+        - $formkit: color
+          name: theme_color
+          label: 主题颜色
+          value: "#000000"
+          validation: required
+          help: '应用的主题颜色，影响状态栏、地址栏等系统UI的颜色'
+        - $formkit: repeater
+          name: icons
+          label: 应用图标配置
+          value:
+            - src: "/icons/icon-192x192.png"
+              sizes: "192x192"
+              type: "image/png"
+            - src: "/icons/icon-512x512.png"
+              sizes: "512x512"
+              type: "image/png"
+          children:
+            - $formkit: attachment
+              name: src
+              label: 图标
+              validation: required
+            - $formkit: text
+              name: sizes
+              label: 图标的尺寸（像素）
+              validation: required
+            - $formkit: text
+              name: type
+              label: 图标的MIME类型
+              validation: required
+
+

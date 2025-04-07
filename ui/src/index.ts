@@ -1,24 +1,23 @@
 import { definePlugin } from "@halo-dev/console-shared";
-import HomeView from "./views/HomeView.vue";
-import { IconPlug } from "@halo-dev/components";
 import { markRaw } from "vue";
+import SimpleIconsPwa from '~icons/simple-icons/pwa?width=1.2em&height=1.2em';
 
 export default definePlugin({
   components: {},
   routes: [
     {
-      parentName: "Root",
+      parentName: "ToolsRoot",
       route: {
-        path: "/example",
-        name: "Example",
-        component: HomeView,
+        path: "/pwa",
+        name: "PWA",
+        redirect: "/plugins/pwa?tab=basic",
         meta: {
-          title: "示例页面",
+          title: "PWA  (渐进式Web应用)",
+          description: "PWA 可以帮助您立即将 Halo 网站转换为渐进式 Web 应用程序。",
           searchable: true,
           menu: {
-            name: "示例页面",
-            group: "示例分组",
-            icon: markRaw(IconPlug),
+            name: "PWA  (渐进式Web应用)",
+            icon: markRaw(SimpleIconsPwa),
             priority: 0,
           },
         },
