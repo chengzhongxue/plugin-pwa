@@ -15,6 +15,7 @@ export default definePlugin({
           title: "PWA  (渐进式Web应用)",
           description: "PWA 可以帮助您立即将 Halo 网站转换为渐进式 Web 应用程序。",
           searchable: true,
+          permissions: ["*"],
           menu: {
             name: "PWA  (渐进式Web应用)",
             icon: markRaw(SimpleIconsPwa),
